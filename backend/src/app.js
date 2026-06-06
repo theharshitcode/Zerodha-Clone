@@ -4,8 +4,8 @@ const helmet = require("helmet");
 const cors = require("cors");
 const morgan = require("morgan");
 const swaggerUi =require("swagger-ui-express");
-const passport =
-require("passport");
+const passport = require("passport");
+const cookieParser = require("cookie-parser");
 
 require("./config/passport");
 
@@ -20,23 +20,24 @@ app.use(cors({
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
-
+app.use(cookieParser());
 app.use(
     passport.initialize()
 );
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const authRoutes = require("./routes/AuthRoute");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 const AppError = require("./utils/AppError");
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const stockRoutes = require("./routes/StockRoute")
 
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
 app.use("/auth", authRoutes);
+app.use("/stocks" , stockRoutes);
 
 app.use((req, res, next) => {
     next(new AppError("Route not found", 404));

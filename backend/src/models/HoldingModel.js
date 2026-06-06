@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ZzerodhamodelSchema = new mongoose.Schema({
+const HoldingmodelSchema = new mongoose.Schema({
     name: { type: String, required: true },
     price: { type: Number, required: true },
     avg: { type: Number, required: true },
@@ -9,6 +9,6 @@ const ZzerodhamodelSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now }
 });
 
-const Zzerodhamodel = mongoose.model("Zzerodhamodel", ZzerodhamodelSchema);
+const Holdingmodel = mongoose.model("Holdingmodel", HoldingmodelSchema);
 
-module.exports = Zzerodhamodel;
+module.exports = Holdingmodel;

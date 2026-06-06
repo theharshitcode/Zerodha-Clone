@@ -15,6 +15,22 @@ exports.Login = asyncHandler(async (req, res) => {
         password
     );
 
+    res.cookie(
+        "refreshToken",
+        result.refreshToken,
+        {
+            httpOnly: true,
+            secure:
+                process.env.NODE_ENV ===
+                "production",
+
+            sameSite: "strict",
+
+            maxAge:
+                7 * 24 * 60 * 60 * 1000
+        }
+    );
+
     res.status(200).json({
         success: true,
         ...result
@@ -24,6 +40,8 @@ exports.Login = asyncHandler(async (req, res) => {
 // Register
 exports.Register = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
+
+    const refreshToken = req.cookies.refreshToken;
 
     const result = await authService.register(
         username,
@@ -59,6 +77,10 @@ exports.Logout = asyncHandler(async (req, res) => {
             400
         );
     }
+
+    res.clearCookie(
+        "refreshToken"
+    );
 
     await Auth.findByIdAndUpdate(
         req.user.userId,

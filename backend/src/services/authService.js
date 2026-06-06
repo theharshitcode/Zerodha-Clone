@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+const cookieParser = require("cookie-parser");
 const Auth = require("../models/AuthModel");
 const AppError = require("../utils/AppError");
 const generateToken =
