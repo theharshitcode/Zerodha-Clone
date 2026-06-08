@@ -1,14 +1,34 @@
 const mongoose = require("mongoose");
 
-const HoldingmodelSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    price: { type: Number, required: true },
-    avg: { type: Number, required: true },
-    quantity: { type: Number, required: true },
-    net: { type: String, required: true },
-    date: { type: Date, default: Date.now }
+const holdingSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Auth",
+        required: true
+    },
+
+    symbol: {
+        type: String,
+        required: true,
+        uppercase: true
+    },
+
+    quantity: {
+        type: Number,
+        default: 0
+    },
+
+    avgPrice: {
+        type: Number,
+        default: 0
+    }
+
+}, {
+    timestamps: true
 });
 
-const Holdingmodel = mongoose.model("Holdingmodel", HoldingmodelSchema);
-
-module.exports = Holdingmodel;
+module.exports =
+    mongoose.model(
+        "Holding",
+        holdingSchema
+    );

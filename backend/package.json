@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node src/seeders/stockSeeder.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +14,6 @@
   "type": "commonjs",
   "dependencies": {
     "bcrypt": "^6.0.0",
-    "body-parse": "^0.1.0",
     "body-parser": "^2.2.2",
     "config": "^4.4.1",
     "cookie-parser": "^1.4.7",

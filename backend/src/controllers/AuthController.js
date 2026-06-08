@@ -41,8 +41,6 @@ exports.Login = asyncHandler(async (req, res) => {
 exports.Register = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
 
-    const refreshToken = req.cookies.refreshToken;
-
     const result = await authService.register(
         username,
         email,
@@ -71,19 +69,12 @@ exports.Logout = asyncHandler(async (req, res) => {
     const token =
         req.headers.authorization?.split(" ")[1];
 
-    if (!token) {
-        throw new AppError(
-            "Token missing",
-            400
-        );
-    }
-
     res.clearCookie(
         "refreshToken"
     );
 
     await Auth.findByIdAndUpdate(
-        req.user.userId,
+        req.user.id || req.user._id,
         {
             refreshToken: null
         }

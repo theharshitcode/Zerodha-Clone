@@ -44,3 +44,8 @@ const AuthSchema = new mongoose.Schema({
 }, {
     timestamps: true
 });
+
+module.exports = mongoose.model(
+    "Auth",
+    AuthSchema
+);

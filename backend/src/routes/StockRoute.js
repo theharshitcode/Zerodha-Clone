@@ -1,29 +1,78 @@
 const express = require("express");
 
-const router = router.express();
+const {
+    getAllStocks,
+    getStockBySymbol,
+    searchStocks
+} = require("../controllers/StockController");
 
-router.get("/", async(req, res)=>{
-    res.send("Stock Route");
-})
+const validate =
+    require("../middlewares/validate");
 
-router.post("/buy", async(req, res)=>{
-    res.send("Buy Stock");
-})
+const stockValidator = require("../validators/stockValidator");
 
-router.post("/sell", async(req, res)=>{ 
-    res.send("Sell Stock");
-})
+const router = express.Router();
 
-router.get("/history", async(req, res)=>{
-    res.send("Transaction History");
-})
+/**
+ * @swagger
+ * /stocks:
+ *   get:
+ *     summary: Get all stocks
+ *     tags: [Stocks]
+ *     responses:
+ *       200:
+ *         description: List of all stocks retrieved successfully
+ *       500:
+ *         description: Internal server error
+ */
+router.get("/", getAllStocks);
 
-router.get('/:symbol', async(req,res)=>{
-    res.send("Stock Symbols")
-})
+/**
+ * @swagger
+ * /stocks/search:
+ *   get: 
+ *     summary: Search stocks
+ *     tags: [Stocks]
+ *     parameters:
+ *       - in: query
+ *         name: q
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Search query
+ *     responses:
+ *       200:
+ *         description: Search results retrieved successfully
+ *       400:
+ *         description: Bad request
+ *       500:
+ *         description: Internal server error
+ */
+router.get("/search", validate(stockValidator.searchStockSchema, "query"), searchStocks);
 
-router.get('/search?q=tcs', async(req,res)=>{
-    res.send("Stock Symbols")
-})
+/**
+ * @swagger
+ * /stocks/{symbol}:
+ *   get: 
+ *     summary: Get stock by symbol
+ *     tags: [Stocks]
+ *     parameters:
+ *       - in: path
+ *         name: symbol
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: Stock symbol
+ *     responses:
+ *       200:
+ *         description: Stock details retrieved successfully
+ *       400:
+ *         description: Bad request
+ *       404:
+ *         description: Stock not found
+ *       500:
+ *         description: Internal server error
+ */
+router.get("/:symbol", validate(stockValidator.stockSymbolSchema, "params"), getStockBySymbol);
 
 module.exports = router;
