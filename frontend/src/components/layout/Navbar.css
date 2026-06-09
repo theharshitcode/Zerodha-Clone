@@ -1,0 +1,52 @@
+.navbar {
+  border-bottom: 1px solid #f3f3f3;
+  background: white;
+}
+
+.logo{
+  max-width: 130px;
+  /* margin-right: 20px; */
+}
+
+/* .nav-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+} */
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+ 
+}
+.logo a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #387ed1;
+}
+
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #424242;
+  font-size: 0.95rem;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #387ed1;
+}
