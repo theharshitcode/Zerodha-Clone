@@ -1,10 +1,12 @@
 const products = [
   {
-    title: "Kite",
-    image: "/media/image/kite.png",
-    description:
-      "Our ultra-fast flagship trading platform with streaming market data, advanced charts, and elegant UI."
-  },
+  title: "Kite",
+  image: "/media/image/kite.png",
+  description:
+    "Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more.",
+  link1: "Try demo",
+  link2: "Learn more"
+},
 
   {
     title: "Console",

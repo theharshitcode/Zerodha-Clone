@@ -1,0 +1,396 @@
+/* =========================
+   HERO
+========================= */
+
+.signup-hero {
+  max-width: 1100px;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.signup-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #424242;
+
+  margin-bottom: 1rem;
+}
+
+.signup-hero p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.hero-content {
+  margin-top: 4rem;
+
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.hero-image,
+.signup-form {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+}
+
+.signup-form {
+  text-align: left;
+}
+
+.signup-form h2 {
+  color: #424242;
+  margin-bottom: 0.5rem;
+}
+
+.phone-input {
+  margin: 1.5rem 0;
+
+  display: flex;
+
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+.phone-input span {
+  padding: 14px;
+  background: #fafafa;
+  border-right: 1px solid #ddd;
+}
+
+.phone-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 14px;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 4px;
+
+  background: #387ed1;
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.signup-form small {
+  display: block;
+  margin-top: 1rem;
+  color: #666;
+}
+
+/* =========================
+   INVESTMENTS
+========================= */
+
+.investments {
+  max-width: 1100px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.investments h2 {
+  margin-bottom: 4rem;
+  color: #424242;
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.investment-card img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.investment-card h3 {
+  margin-bottom: 0.8rem;
+  color: #424242;
+}
+
+.investment-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* =========================
+   STEPS
+========================= */
+.steps {
+  max-width: 1100px;
+  margin: 120px auto;
+}
+
+.steps h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #424242;
+
+  margin-bottom: 4rem;
+}
+
+.steps-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.steps-image,
+.steps-content {
+  flex: 1;
+}
+
+.steps-image img {
+  width: 100%;
+  max-width: 500px;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+
+  padding: 1.5rem 0;
+
+  border-bottom: 1px solid #eee;
+}
+
+.step-item span {
+  font-size: 2rem;
+  font-weight: 600;
+
+  color: #387ed1;
+
+  margin-right: 2rem;
+
+  min-width: 60px;
+}
+
+.step-item p {
+  font-size: 1.1rem;
+  color: #424242;
+}
+
+@media (max-width: 768px) {
+
+  .steps-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-item {
+    justify-content: center;
+  }
+
+}
+
+/* =========================
+   BENEFITS
+========================= */
+.benefits {
+  max-width: 1100px;
+  margin: 120px auto;
+}
+
+.benefits-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.benefits-image,
+.benefits-content {
+  flex: 1;
+}
+
+.benefits-image img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.benefit-item {
+  margin-bottom: 3rem;
+}
+
+.benefit-item h3 {
+  color: #424242;
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.benefit-item p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.benefits h2 {
+  text-align: center;
+  margin-top: 3rem;
+
+  font-size: 2.5rem;
+  color: #424242;
+}
+
+.benefits-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.benefit-item h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #424242;
+
+  margin-bottom: 1rem;
+}
+
+.benefit-item p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #666;
+}
+/* =========================
+   ACCOUNT TYPES
+========================= */
+
+.account-types {
+  max-width: 1100px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.account-types h2 {
+  margin-bottom: 4rem;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.account-card {
+  padding: 2rem;
+
+  border: 1px solid #eee;
+  border-radius: 8px;
+
+  transition: 0.3s;
+}
+
+.account-card:hover {
+  transform: translateY(-5px);
+}
+
+.account-card h3 {
+  color: #424242;
+}
+
+/* =========================
+   FAQ
+========================= */
+.faq-section {
+  max-width: 900px;
+  margin: 120px auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #424242;
+
+  margin-bottom: 3rem;
+}
+
+.faq-card {
+  border-bottom: 1px solid #eee;
+}
+
+.faq-question {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: none;
+  border: none;
+
+  padding: 1.5rem 0;
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+  text-align: left;
+
+  color: #424242;
+}
+
+.faq-answer {
+  padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+  color: #666;
+  line-height: 1.8;
+}
+
+.faq-question span {
+  font-size: 1.4rem;
+  color: #387ed1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .investment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .account-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .signup-hero h1 {
+    font-size: 2rem;
+  }
+
+  .investment-grid,
+  .benefits-grid,
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

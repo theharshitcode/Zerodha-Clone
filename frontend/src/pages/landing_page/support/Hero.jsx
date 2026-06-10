@@ -1,10 +1,31 @@
+import "./SupportPage.css";
 
 const Hero = () => {
   return (
-    <div>
-      <h1>Hero</h1>
-    </div>
-  )
-}
+    <section className="support-hero">
 
-export default Hero
+      <div className="hero-container">
+
+        <div className="hero-top">
+
+          <h1>Support Portal</h1>
+
+          <button>
+            My Tickets
+          </button>
+
+        </div>
+
+        <input
+          className="support-search"
+          type="text"
+          placeholder="Eg: How do I open my account, How do I activate F&O..."
+        />
+
+      </div>
+
+    </section>
+  );
+};
+
+export default Hero;

@@ -1,8 +1,10 @@
 import ProductsHero from "./Hero";
-// import Product from "./Product";
+import Product from "./Product";
 import products from "./productsData";
+import Universe from "./Universe";
 import OpenAccount from "../OpenAccount";
-import "./ProductPage.css"
+
+import "./ProductPage.css";
 
 const ProductsPage = () => {
   return (
@@ -20,6 +22,8 @@ const ProductsPage = () => {
           />
         )
       )}
+
+        <Universe />
 
       <OpenAccount />
     </>

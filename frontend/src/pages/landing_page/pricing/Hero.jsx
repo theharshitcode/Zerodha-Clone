@@ -1,10 +1,15 @@
+import "./PricingPage.css";
 
 const Hero = () => {
   return (
-    <div>
-      <h1>Hero</h1>
-    </div>
-  )
-}
+    <section className="pricing-hero">
+      <h1>Charges</h1>
 
-export default Hero
+      <p>
+        List of all charges and taxes
+      </p>
+    </section>
+  );
+};
+
+export default Hero;
