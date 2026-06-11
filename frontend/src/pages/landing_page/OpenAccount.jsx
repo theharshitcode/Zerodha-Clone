@@ -10,9 +10,9 @@ const OpenAccount = () => {
         and flat ₹20 intraday and F&O trades.
       </p>
 
-      <button>
-        Sign up for free
-      </button>
+      <button className="signup-btn">
+          Sign up for free
+        </button>
 
     </section>
   );

@@ -8,25 +8,25 @@ import PricingPage from "../pages/landing_page/pricing/PricingPage";
 import ProductsPage from "../pages/landing_page/products/ProductsPage";
 import SupportPage from "../pages/landing_page/support/SupportPage";
 import NotFound from "../pages/landing_page/NotFound";
-import SignupPage from "../pages/auth/signup/SignupPage";
-// import LoginPage from "../pages/auth/Login/Login";
-// import Register from "../pages/auth/Register/Register";
+// import SignupPage from "../pages/auth/signup/SignupPage";
+import LoginPage from "../pages/auth/Login/Login";
+import Register from "../pages/auth/Register/Register";
 
 function AppRoutes() {
   return (
     <Routes>
 
-      {/* <Route
+      <Route
         path="/signup"
         element={<Register />}
       />
 
-      <Route path="/login" element={<LoginPage />} /> */}
+      <Route path="/login" element={<LoginPage />} />
 
-      <Route
+      {/* <Route
         path="/signup"
         element={<SignupPage />}
-      />
+      /> */}
 
       <Route
         path="/"

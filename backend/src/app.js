@@ -13,8 +13,8 @@ require("./config/passport");
 // Middleware to parse JSON
 app.use(helmet());
 app.use(cors({
-    origin: process.env.CLIENT_URL,
-    credentials: true
+  origin: "http://localhost:5173",
+  credentials: true
 }));
 if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev"));

@@ -1,6 +1,79 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext";
+import { loginUser } from "../../../services/authService";
 import "./Login.css";
 
-const LoginPage = () => {
+const Login = () => {
+
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [loading, setLoading] =
+    useState(false);
+
+  const handleChange = (e) => {
+
+    setFormData({
+      ...formData,
+      [e.target.name]:
+        e.target.value,
+    });
+
+  };
+
+  const handleSubmit = async (e) => {
+
+    e.preventDefault();
+
+    try {
+
+      setLoading(true);
+
+      const response =
+        await loginUser(
+          formData
+        );
+
+      console.log("LOGIN RESPONSE:", response);
+
+      // alert(
+      //   JSON.stringify(
+      //     response,
+      //     null,
+      //     2
+      //   )
+      // );
+      // JWT store
+
+      login(response.token);
+      login(response.accessToken);
+
+      navigate("/dashboard");
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+        error.response?.data?.message ||
+        "Login Failed"
+      );
+
+    } finally {
+
+      setLoading(false);
+
+    }
+
+  };
+
   return (
     <section className="login-page">
 
@@ -8,51 +81,68 @@ const LoginPage = () => {
 
         <img
           src="/media/image/logo.svg"
-          alt="Zerodha Logo"
+          alt="Zerodha"
           className="login-logo"
         />
 
-        <h1>Login</h1>
+        <h1>Login to Zerodha</h1>
 
-        <p>
-          Login to access your trading account
-        </p>
-
-        <form>
+        <form
+          onSubmit={handleSubmit}
+        >
 
           <div className="form-group">
+
             <label>Email</label>
 
             <input
               type="email"
-              placeholder="Enter your email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter email"
+              required
             />
+
           </div>
 
           <div className="form-group">
+
             <label>Password</label>
 
             <input
               type="password"
-              placeholder="Enter your password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter password"
+              required
             />
+
           </div>
 
           <button
             type="submit"
             className="login-btn"
           >
-            Login
-          </button>
-
-          <button
-            type="button"
-            className="google-btn"
-          >
-            Continue with Google
+            {
+              loading
+                ? "Logging in..."
+                : "Login"
+            }
           </button>
 
         </form>
+
+        <p className="signup-link">
+
+          Don't have an account?
+
+          <Link to="/signup">
+            Signup
+          </Link>
+
+        </p>
 
       </div>
 
@@ -60,4 +150,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;

@@ -14,9 +14,6 @@ exports.registerSchema = Joi.object({
 
     password: Joi.string()
         .min(8)
-        .pattern(
-            /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).+$/
-        )
         .required()
 });
 
