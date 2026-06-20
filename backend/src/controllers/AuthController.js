@@ -30,6 +30,10 @@ exports.Login = asyncHandler(async (req, res) => {
                 7 * 24 * 60 * 60 * 1000
         }
     );
+    localStorage.setItem(
+        "token",
+        response.accessToken
+    );
 
     res.status(200).json({
         success: true,

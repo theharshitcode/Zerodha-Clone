@@ -1,0 +1,40 @@
+.stock-details {
+  background: white;
+  padding: 30px;
+}
+
+.stock-details h2 {
+  color: #424242;
+}
+
+.stock-details h3 {
+  margin: 20px 0;
+  color: #387ed1;
+}
+
+.actions {
+  margin-top: 25px;
+
+  display: flex;
+  gap: 15px;
+}
+
+.buy-btn,
+.sell-btn {
+  border: none;
+  padding: 10px 25px;
+
+  color: white;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.buy-btn {
+  background: #4caf50;
+}
+
+.sell-btn {
+  background: #f44336;
+}

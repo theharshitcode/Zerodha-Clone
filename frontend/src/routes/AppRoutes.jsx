@@ -11,10 +11,26 @@ import NotFound from "../pages/landing_page/NotFound";
 // import SignupPage from "../pages/auth/signup/SignupPage";
 import LoginPage from "../pages/auth/Login/Login";
 import Register from "../pages/auth/Register/Register";
+import DashboardPage from "../pages/landing_page/dashboard/DashboardPage";
+
+
+import ProtectedRoute from "./ProtectedRoute";
+
 
 function AppRoutes() {
   return (
     <Routes>
+
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+
+            <DashboardPage />
+
+          </ProtectedRoute>
+        }
+      />
 
       <Route
         path="/signup"
