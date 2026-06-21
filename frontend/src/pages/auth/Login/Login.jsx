@@ -36,23 +36,18 @@ const Login = () => {
 
       setLoading(true);
 
-      const response =
-        await loginUser(
-          formData
-        );
+      const response = await loginUser(formData);
 
-      console.log("LOGIN RESPONSE:", response);
+      localStorage.setItem(
+        "token",
+        response.accessToken
+      );
 
-      // alert(
-      //   JSON.stringify(
-      //     response,
-      //     null,
-      //     2
-      //   )
-      // );
-      // JWT store
+      localStorage.setItem(
+        "user",
+        JSON.stringify(response.user)
+      );
 
-      login(response.token);
       login(response.accessToken);
 
       navigate("/dashboard");

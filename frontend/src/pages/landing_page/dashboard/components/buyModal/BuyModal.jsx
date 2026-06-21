@@ -15,7 +15,6 @@ const BuyModal = ({
     setLoading] =
     useState(false);
   const handleBuy = async () => {
-    console.log("BUY CLICKED");
     try {
 
       const payload = {
@@ -24,28 +23,17 @@ const BuyModal = ({
         price: stock.currentPrice
       };
 
-      console.log(payload);
+      
 
       const response =
         await buyStock(payload);
 
-      console.log(
-        "BUY RESPONSE:",
-        response
-      );
-
+      
       alert(response.message);
 
       onClose();
 
     } catch (error) {
-      console.log(
-        "BUY ERROR:",
-        error.response?.data
-      );
-
-      console.error(error);
-
       alert(
         error.response?.data?.message ||
         "Buy failed"

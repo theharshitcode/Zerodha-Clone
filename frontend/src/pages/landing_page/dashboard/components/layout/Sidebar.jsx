@@ -1,7 +1,15 @@
+import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import {
+  FaChartLine,
+  FaWallet,
+  FaUser
+} from "react-icons/fa";
 
 const Sidebar = () => {
+
   return (
+
     <aside className="sidebar">
 
       <img
@@ -12,22 +20,48 @@ const Sidebar = () => {
 
       <ul>
 
-        <li>Dashboard</li>
+        <li>
+          <NavLink to="/dashboard">
+            Dashboard
+          </NavLink>
+        </li>
 
-        <li>Orders</li>
+        <li>
+          <NavLink to="/orders">
+            Orders
+          </NavLink>
+        </li>
 
-        <li>Holdings</li>
+        <li>
+          <NavLink to="/holdings">
+            Holdings
+          </NavLink>
+        </li>
 
-        <li>Positions</li>
+        <li>
+          <NavLink to="/positions">
+            Positions
+          </NavLink>
+        </li>
 
-        <li>Funds</li>
+        <li>
+          <NavLink to="/funds">
+            Funds
+          </NavLink>
+        </li>
 
-        <li>Apps</li>
+        <li>
+          <NavLink to="/profile">
+            Profile
+          </NavLink>
+        </li>
 
       </ul>
 
     </aside>
+
   );
+
 };
 
 export default Sidebar;

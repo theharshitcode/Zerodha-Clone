@@ -12,8 +12,10 @@ import NotFound from "../pages/landing_page/NotFound";
 import LoginPage from "../pages/auth/Login/Login";
 import Register from "../pages/auth/Register/Register";
 import DashboardPage from "../pages/landing_page/dashboard/DashboardPage";
-
-
+import ProfilePage from "../pages/landing_page/dashboard/components/profileLogo/profile/Profile";
+import FundsPage from "../pages/landing_page/dashboard/components/profileLogo/Funds/FundsPage"
+import OrdersPage from "../pages/landing_page/dashboard/components/orders/Orders"
+import HoldingsPage from "../pages/landing_page/dashboard/components/holdings/Holdings"
 import ProtectedRoute from "./ProtectedRoute";
 
 
@@ -32,6 +34,12 @@ function AppRoutes() {
         }
       />
 
+      <Route path="/dashboard" element={<DashboardPage />} />
+<Route path="/orders" element={<OrdersPage />} />
+<Route path="/holdings" element={<HoldingsPage />} />
+<Route path="/funds" element={<FundsPage />} />
+<Route path="/profile" element={<ProfilePage />} />
+
       <Route
         path="/signup"
         element={<Register />}
@@ -39,10 +47,15 @@ function AppRoutes() {
 
       <Route path="/login" element={<LoginPage />} />
 
-      {/* <Route
-        path="/signup"
-        element={<SignupPage />}
-      /> */}
+      <Route
+        path="/profile"
+        element={<ProfilePage />}
+      />
+
+      <Route
+        path="/funds"
+        element={<FundsPage />}
+      />
 
       <Route
         path="/"

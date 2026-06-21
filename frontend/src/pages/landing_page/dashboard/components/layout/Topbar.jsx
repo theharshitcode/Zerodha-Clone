@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
+
 import {
   useNavigate
 }
-from "react-router-dom";
+  from "react-router-dom";
 
 import "./Topbar.css";
 
@@ -26,46 +28,63 @@ const Topbar = () => {
 
     };
 
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
 
-    <header
-      className="topbar"
-    >
+    <div className="topbar">
 
-      <h2>
-        Dashboard
-      </h2>
+      <h2>Dashboard</h2>
 
-      <div
-        className="topbar-right"
-      >
+      <div className="topbar-right">
 
         <div
           className="profile"
-        >
-
-          {
-            user?.username
-              ?.charAt(0)
-              .toUpperCase()
+          onClick={() =>
+            setShowMenu(!showMenu)
           }
-
+        >
+          H
         </div>
-
-        <button
-          className="logout-btn"
-          onClick={
-            handleLogout
-          }
-        >
-
-          Logout
-
-        </button>
 
       </div>
 
-    </header>
+      {showMenu && (
+
+        <div className="profile-menu">
+
+          <button
+            onClick={() =>
+              navigate("/profile")
+            }
+          >
+            My Profile
+          </button>
+
+          <button
+            onClick={() =>
+              navigate("/funds")
+            }
+          >
+            Funds
+          </button>
+
+          <button>
+            Settings
+          </button>
+
+          <button
+            className="logout-btn"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+
+        </div>
+
+      )}
+
+    </div>
 
   );
 };

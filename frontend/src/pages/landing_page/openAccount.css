@@ -21,22 +21,16 @@
 }
 
 .signup-btn {
-  background: #387ed1;
+  margin-top: 25px;
+  padding: 10px 30px;;
+  font-size: 1.1rem;
+  background-color: #387ed1;
   color: #fff;
-
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
   border-radius: 3px;
-
-  padding: 12px 30px;
-
-  font-size: 1.2rem;
-  font-weight: 500;
-
   cursor: pointer;
-
-  transition: background 0.25s ease;
 }
 
 .signup-btn:hover {
-  background: #222;
+  background: #141414;
 }

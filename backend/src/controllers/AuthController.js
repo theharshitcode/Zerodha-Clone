@@ -8,12 +8,15 @@ const authService = require("../services/authService");
 
 // Login
 exports.Login = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
 
-    const result = await authService.login(
-        email,
-        password
-    );
+    const { email, password } =
+        req.body;
+
+    const result =
+        await authService.login(
+            email,
+            password
+        );
 
     res.cookie(
         "refreshToken",
@@ -23,24 +26,18 @@ exports.Login = asyncHandler(async (req, res) => {
             secure:
                 process.env.NODE_ENV ===
                 "production",
-
             sameSite: "strict",
-
             maxAge:
                 7 * 24 * 60 * 60 * 1000
         }
-    );
-    localStorage.setItem(
-        "token",
-        response.accessToken
     );
 
     res.status(200).json({
         success: true,
         ...result
     });
-});
 
+});
 // Register
 exports.Register = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;

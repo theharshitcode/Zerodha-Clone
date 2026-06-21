@@ -19,12 +19,12 @@ const Pricing = () => {
       <div className="pricing-right">
 
         <div className="pricing-box">
-          <h3>₹0</h3>
+          <img src="/media/image/pricing0.svg" alt="" />
           <p>Free account opening</p>
         </div>
 
         <div className="pricing-box">
-          <h3>₹0</h3>
+          <img src="/media/image/pricing0.svg" alt="" />
           <p>
             Free equity delivery and
             direct mutual funds
@@ -32,7 +32,7 @@ const Pricing = () => {
         </div>
 
         <div className="pricing-box">
-          <h3>₹20</h3>
+          <img src="/media/image/intradayTrades.svg" alt="" />
           <p>Intraday and F&O</p>
         </div>
 

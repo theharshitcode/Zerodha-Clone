@@ -3,6 +3,7 @@ import "./HomePage.css"
 import Hero from "./Hero";
 import Awards from "./Awards";
 import TrustConfidence from "./TrustConfidence";
+import KiteConnect from "./KiteConnect";
 import Pricing from "./Pricing";
 import Education from "./Education";
 
@@ -14,6 +15,7 @@ function HomePage() {
       <Hero />
       <Awards />
       <TrustConfidence />
+      <KiteConnect/>
       <Pricing />
       <Education />
       <OpenAccount />

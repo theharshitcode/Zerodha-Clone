@@ -59,7 +59,6 @@ try {
       payload
     );
 
-  console.log(response);
 
   alert(
     "Registration Successful"
@@ -68,13 +67,6 @@ try {
   navigate("/login");
 
 } catch (error) {
-
-  console.log("FULL ERROR:", error);
-
-  console.log(
-    "BACKEND RESPONSE:",
-    error.response?.data
-  );
 
   alert(
     JSON.stringify(

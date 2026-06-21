@@ -13,3 +13,14 @@
       0,0,0,0.08
     );
 }
+
+.chart-card,
+.holdings,
+.orders,
+.market-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow:
+    0 1px 4px rgba(0,0,0,0.08);
+}

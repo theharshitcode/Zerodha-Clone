@@ -1,52 +1,16 @@
-import { useEffect, useState }
-  from "react";
-
-import {
-  getHoldings
-}
-  from "../../../../../services/holdingService";
-
 import "./Holdings.css";
 
-const Holdings = () => {
-
-  const [holdings,
-    setHoldings] =
-    useState([]);
-
-  useEffect(() => {
-
-    const fetchHoldings =
-      async () => {
-
-        try {
-
-          const data =
-            await getHoldings();
-
-          setHoldings(
-            data.holdings
-          );
-
-        } catch (error) {
-
-          console.error(error);
-
-        }
-
-      };
-
-    fetchHoldings();
-
-  }, []);
+const Holdings = ({
+  holdings
+}) => {
 
   return (
 
     <div className="holdings">
 
-      <h2>
+      <h3>
         Holdings
-      </h2>
+      </h3>
 
       <table>
 
@@ -54,13 +18,33 @@ const Holdings = () => {
 
           <tr>
 
-            <th>Symbol</th>
+            <th>
+              Symbol
+            </th>
 
-            <th>Qty</th>
+            <th>
+              Qty
+            </th>
 
-            <th>Avg Price</th>
+            <th>
+              Avg Price
+            </th>
 
-            <th>Investment</th>
+            <th>
+              Current
+            </th>
+
+            <th>
+              Invested
+            </th>
+
+            <th>
+              Value
+            </th>
+
+            <th>
+              P&L
+            </th>
 
           </tr>
 
@@ -70,40 +54,94 @@ const Holdings = () => {
 
           {
             holdings.map(
-              holding => (
+              holding => {
 
-                <tr
-                  key={holding._id}
-                >
+                const invested =
+                  holding.quantity *
+                  holding.avgPrice;
 
-                  <td>
-                    {holding.symbol}
-                  </td>
+                const currentPrice =
+                  holding.currentPrice ||
+                  holding.avgPrice;
 
-                  <td>
-                    {holding.quantity}
-                  </td>
+                const currentValue =
+                  holding.quantity *
+                  currentPrice;
 
-                  <td>
-                    ₹{
-                      (
-                        holding.quantity *
+                const pnl =
+                  currentValue -
+                  invested;
+
+                return (
+
+                  <tr
+                    key={
+                      holding._id
+                    }
+                  >
+
+                    <td>
+                      {
+                        holding.symbol
+                      }
+                    </td>
+
+                    <td>
+                      {
+                        holding.quantity
+                      }
+                    </td>
+
+                    <td>
+                      ₹{
                         holding.avgPrice
-                      ).toLocaleString()
-                    }
-                  </td>
+                      }
+                    </td>
 
-                  <td>
-                    ₹
-                    {
-                      holding.quantity *
-                      holding.avgPrice
-                    }
-                  </td>
+                    <td>
+                      ₹{
+                        currentPrice
+                      }
+                    </td>
 
-                </tr>
+                    <td>
+                      ₹{
+                        invested.toFixed(
+                          0
+                        )
+                      }
+                    </td>
 
-              ))
+                    <td>
+                      ₹{
+                        currentValue.toFixed(
+                          0
+                        )
+                      }
+                    </td>
+
+                    <td
+                      className={
+                        pnl >= 0
+                          ? "profit"
+                          : "loss"
+                      }
+                    >
+
+                      ₹{
+                        pnl.toFixed(
+                          0
+                        )
+                      }
+
+                    </td>
+
+                  </tr>
+
+                );
+
+              }
+            )
           }
 
         </tbody>
@@ -113,6 +151,7 @@ const Holdings = () => {
     </div>
 
   );
+
 };
 
 export default Holdings;

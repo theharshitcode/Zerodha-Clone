@@ -1,0 +1,38 @@
+.funds-page {
+  padding: 30px;
+}
+
+.funds-page h2 {
+  color: #424242;
+  margin-bottom: 20px;
+}
+
+.funds-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.fund-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0,0,0,0.08);
+}
+
+.fund-card h4 {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.fund-card h2 {
+  color: #387ed1;
+}

@@ -53,33 +53,16 @@ const TrustConfidence = () => {
           alt="Zerodha Ecosystem"
         />
 
-        <h3>The Zerodha Universe</h3>
 
         <div className="trust-links">
-          <a href="/">Explore our products</a>
-          <a href="/">Try Kite demo</a>
+          <a href="/">Explore our products →</a>
+          <a href="/">Try Kite demo →</a>
         </div>
 
-        <div className="kite-connect">
-          <img
-            src="/media/image/kiteconnect.png"
-            alt="Kite Connect"
-          />
-
-          <p>
-            Need more? Build your own trading and investing
-            experience with Kite Connect, simple HTTP APIs
-            to place orders, stream market data, manage your
-            account, and more.
-          </p>
-
-          <a href="/">Explore →</a>
-        </div>
-        
 
       </div>
 
-      
+
 
     </section>
   );

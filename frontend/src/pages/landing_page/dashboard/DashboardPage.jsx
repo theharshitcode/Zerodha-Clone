@@ -19,6 +19,7 @@ import TopGainers from "./components/market/TopGainers";
 import TopLosers from "./components/market/TopLosers";
 import MarketOverview from "./components/market/MarketOverview";
 import StockChart from "./components/stockChart/StockChart";
+import {getAllStocks} from "../../../services/stockService"
 
 import "./DashboardPage.css";
 
@@ -27,19 +28,46 @@ const DashboardPage = () => {
     const [holdings, setHoldings] = useState([]);
     useEffect(() => {
 
-        const loadHoldings =
+        const loadData =
             async () => {
 
-                const data =
+                const holdingsData =
                     await getHoldings();
 
+                const stocksData =
+                    await getAllStocks();
+
+                const merged =
+                    holdingsData.holdings.map(
+                        holding => {
+
+                            const stock =
+                                stocksData.stocks.find(
+                                    s =>
+                                        s.symbol ===
+                                        holding.symbol
+                                );
+
+                            return {
+
+                                ...holding,
+
+                                currentPrice:
+                                    stock?.currentPrice ||
+                                    holding.avgPrice
+
+                            };
+
+                        }
+                    );
+
                 setHoldings(
-                    data.holdings
+                    merged
                 );
 
             };
 
-        loadHoldings();
+        loadData();
 
     }, []);
 
@@ -69,21 +97,15 @@ const DashboardPage = () => {
                 <div className="dashboard-content">
 
                     <Watchlist
-                        setSelectedStock={
-                            setSelectedStock
-                        }
+                        setSelectedStock={setSelectedStock}
                     />
 
                     <div className="dashboard-right">
 
                         <StockDetails
                             stock={selectedStock}
-                            setShowBuyModal={
-                                setShowBuyModal
-                            }
-                            setShowSellModal={
-                                setShowSellModal
-                            }
+                            setShowBuyModal={setShowBuyModal}
+                            setShowSellModal={setShowSellModal}
                         />
 
                         <StockChart
@@ -116,18 +138,11 @@ const DashboardPage = () => {
 
                 </div>
 
-                <HoldingsPerformanceChart
-                    holdings={holdings}
-                />
-
                 <Holdings
                     holdings={holdings}
                 />
 
                 <Orders />
-
-
-
 
 
                 {/* BUY MODAL */}
