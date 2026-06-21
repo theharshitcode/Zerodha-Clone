@@ -12,10 +12,15 @@ require("./config/passport");
 
 // Middleware to parse JSON
 app.use(helmet());
-app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://frontend.vercel.app"
+    ],
+    credentials: true
+  })
+);
 if (process.env.NODE_ENV === "development") {
     app.use(morgan("dev"));
 }
