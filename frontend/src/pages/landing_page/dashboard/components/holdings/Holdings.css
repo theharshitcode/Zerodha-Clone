@@ -1,0 +1,55 @@
+.holdings {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(0,0,0,0.08);
+
+  margin-top: 20px;
+}
+
+.holdings table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.holdings th,
+.holdings td {
+
+  padding: 12px;
+
+  border-bottom:
+    1px solid #eee;
+
+  text-align: center;
+}
+
+.holdings th {
+  color: #666;
+}
+
+.profit {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.loss {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.chart-card,
+.holdings,
+.orders,
+.market-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow:
+    0 1px 4px rgba(0,0,0,0.08);
+}
