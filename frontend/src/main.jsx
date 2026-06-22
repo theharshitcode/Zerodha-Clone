@@ -1,16 +1,14 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import "@fontsource/inter";
-import { AuthProvider }
-from "./context/AuthContext";
-import "./index.css";
-import App from "./App";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { dom } from '@fortawesome/fontawesome-svg-core'
+import './index.css'
 
-createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
-  </BrowserRouter>
-);
+dom.watch();
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
