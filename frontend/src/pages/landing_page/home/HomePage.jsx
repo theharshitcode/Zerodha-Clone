@@ -1,5 +1,5 @@
 import React from "react";
-import "./HomePage.css"
+import "./Homepage.css"
 import Hero from "./Hero";
 import Awards from "./Awards";
 import TrustConfidence from "./TrustConfidence";
