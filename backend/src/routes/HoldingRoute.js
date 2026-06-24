@@ -9,7 +9,7 @@ const {
 );
 
 const authMiddleware =
-    require("../middlewares/authMiddleWare");
+    require("../middlewares/authMiddleware");
 
 const router =
     express.Router();
