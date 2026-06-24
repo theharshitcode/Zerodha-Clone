@@ -2,7 +2,7 @@
 
 ## 🚀 Live Demo
 
-**Frontend:** https://zerodha-clone-pi-ruddy.vercel.app/
+**Frontend:**[ https://zerodha-clone-pi-ruddy.vercel.app/](https://zerodha-clone-o3d27girk-theharshitcodes-projects.vercel.app/)
 
 **Backend API:** https://zerodha-cejh.onrender.com
 
