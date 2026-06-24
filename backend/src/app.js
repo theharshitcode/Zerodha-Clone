@@ -15,10 +15,9 @@ app.use(helmet());
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://frontend.vercel.app"
+      "https://zerodha-clone-pi-ruddy.vercel.app"
     ],
-    credentials: true
+    credentials: true,
   })
 );
 if (process.env.NODE_ENV === "development") {
@@ -47,6 +46,12 @@ app.use(
 );
 
 // Export app for server.js or testing suites
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Zerodha Backend Running",
+  });
+});
 app.use("/auth", authRoutes);
 app.use("/stocks", stockRoutes);
 app.use("/holdings", holdingRoutes);
