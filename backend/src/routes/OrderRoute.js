@@ -7,7 +7,7 @@ const {
     getTransactionHistory
 } = require("../controllers/OrderController");
 
-const authMiddleware = require("../middlewares/authMiddleware");
+const authMiddleware = require("../middlewares/authMiddleWare");
 
 const validate = require("../middlewares/validate");
 

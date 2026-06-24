@@ -4,7 +4,7 @@ const { addStock, getWatchlist, removeStock } = require("../controllers/Watchlis
 
 const { addStockSchema } = require("../validators/watchlistValidator");
 
-const authMiddleware = require("../middlewares/authMiddleware");
+const authMiddleware = require("../middlewares/authMiddleWare");
 
 const validate = require("../middlewares/validate");
 
