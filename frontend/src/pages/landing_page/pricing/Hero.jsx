@@ -1,4 +1,3 @@
-import "./PricingPage.css";
 
 const Hero = () => {
   return (

@@ -1,6 +1,4 @@
 
-import "./ProductPage.css";
-
 const universeItems = [
   {
     image: "/media/image/smallcaseLogo.png",

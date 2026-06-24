@@ -1,4 +1,3 @@
-import "./ProductPage.css"
 const Product = ({
   title,
   image,

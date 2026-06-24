@@ -1,4 +1,4 @@
-import "./HomePage.css"
+
 const Awards = () => {
   return (
     <section className="awards">

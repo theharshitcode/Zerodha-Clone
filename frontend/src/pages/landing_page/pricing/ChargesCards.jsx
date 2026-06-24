@@ -1,4 +1,4 @@
-import "./PricingPage.css";
+
 
 const ChargesCards = () => {
   return (

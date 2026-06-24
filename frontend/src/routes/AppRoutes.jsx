@@ -35,10 +35,10 @@ function AppRoutes() {
       />
 
       <Route path="/dashboard" element={<DashboardPage />} />
-<Route path="/orders" element={<OrdersPage />} />
-<Route path="/holdings" element={<HoldingsPage />} />
-<Route path="/funds" element={<FundsPage />} />
-<Route path="/profile" element={<ProfilePage />} />
+      <Route path="/orders" element={<OrdersPage />} />
+      <Route path="/holdings" element={<HoldingsPage />} />
+      <Route path="/funds" element={<FundsPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
 
       <Route
         path="/signup"
